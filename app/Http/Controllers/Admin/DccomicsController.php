@@ -16,6 +16,14 @@ class DccomicsController extends Controller
     public function index()
     {
         $dccomics = Dccomic::all();
+        $dccomic = new DCComic();
+        $dccomic->title = $data['title'];
+        $dccomic->description = $data['description'];
+        $dccomic->thumb = $data['thumb'];
+        $dccomic->price = $data['price'];
+        $dccomic->series = $data['series'];
+        $dccomic->sale_date = $data['sale_date'];
+        $dccomic->type  = $data['type'];
         return view('dccomics.index', compact('dccomics'));
     }
 
