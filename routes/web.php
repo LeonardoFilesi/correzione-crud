@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Guest\ResourceController;
+use App\Http\Controllers\Admin\DccomicsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,4 +14,5 @@ use App\Http\Controllers\Guest\ResourceController;
 */
 
 
-Route::get('/', [ResourceController::class, 'index']);
+Route::get('/', [DccomicsController::class, 'index']);
+Route::resource('dccomics', DccomicsController::class);
