@@ -16,6 +16,7 @@ class DccomicsController extends Controller
     public function index()
     {
         $dccomics = Dccomic::all();
+        /* dd($dccomics); */
         return view('dccomics.index', compact('dccomics'));
     }
 

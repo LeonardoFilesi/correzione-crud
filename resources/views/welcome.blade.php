@@ -19,7 +19,7 @@
     @include('dccomics.header')
     
     <main>
-        @yield('dccomics.index')
+        @yield('cards')
     </main>
 </body>
 
