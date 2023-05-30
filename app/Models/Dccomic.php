@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Dccomic extends Model
 {
     use HasFactory;
-    protected $fillable = ['', '', '', ''];
+    protected $fillable = ['id', 'title', 'description', 'thumb', 'price', 'series', 'sale_date', 'type'];
 }
