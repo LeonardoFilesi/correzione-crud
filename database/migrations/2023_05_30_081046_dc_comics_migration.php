@@ -14,14 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('dccomics', function (Blueprint $table){
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('title');
-            $table->string('description');
-            $table->string('thumb');
-            $table->string('price');
-            $table->string('series');
-            $table->string('sale_date');
-            $table->string('type');
+            $table->text('description')->nullable();
+            $table->text('thumb');
+            $table->string('price', 10);
+            $table->string('series', 50);
+            $table->date('sale_date');
+            $table->string('type', 30);
             $table->timestamps();
         });
     }
