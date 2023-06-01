@@ -27,7 +27,7 @@ class DccomicsController extends Controller
      */
     public function create()
     {
-        //
+        return view('dccomics.create');
     }
 
     /**
@@ -38,7 +38,11 @@ class DccomicsController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $data=$request->all();
+        $dccomic=new Dccomic();
+        $dccomic->fill($data);
+        $dccomic->save();
+        return redirect()->route('dccomics.index');
     }
 
     /**
@@ -49,7 +53,8 @@ class DccomicsController extends Controller
      */
     public function show($id)
     {
-        //
+        $dccomic = Dccomic::findOrFail($id);
+        return view ('dccomics.show', compact('dccomic'));
     }
 
     /**
@@ -60,7 +65,8 @@ class DccomicsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dccomic = Dccomic::findOrFail($id);
+        return view('dccomics.edit', compact('dccomic'));
     }
 
     /**
@@ -72,7 +78,10 @@ class DccomicsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data=$request->all();
+        $dccomic= Dccomic::findOrFail($id);
+        $dccomic->update($data);
+        return redirect()->route('dccomics.show', $dccomic->id);
     }
 
     /**
@@ -83,6 +92,8 @@ class DccomicsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dccomic= Dccomic::findOrFail($id);
+        $dccomic->delete();
+        return redirect()->route('dccomics.index');
     }
 }
