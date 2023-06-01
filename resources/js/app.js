@@ -14,6 +14,7 @@ const cancelBtn = document.getElementById('cancelBtn');
 buttons.forEach(element => {
   element.addEventListener('click', (e) => {
     e.preventDefault();  // evita il comportamento di default del form cioe l'invio dei dati e refresh della pagina
+    confirmDeleteDiv.classList.remove('d-none');
     confirmDeleteDiv.classList.add('d-block');
 
     confirmBtn.addEventListener('click', () => {
@@ -22,6 +23,7 @@ buttons.forEach(element => {
 
     cancelBtn.addEventListener('click', () => {
       confirmDeleteDiv.classList.remove('d-block');
+      confirmDeleteDiv.classList.add('d-none');
     });
   })
 });

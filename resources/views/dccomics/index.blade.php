@@ -5,7 +5,7 @@
         <div class="row row-cols-4">
             @foreach ($dccomics as $dccomic)
             <div class="col g-3">
-                <div class="card p-4" style="height: 220px">
+                <div class="card p-4" style="height: 250px">
                     <div class="card-body">
                         <h5 class="card-title">Title:{{ $dccomic->title }}</h5>
                         <p class="card-text">Price: {{ $dccomic->price }}€</p>
@@ -33,11 +33,12 @@
                 </div>
             </div>
             @endforeach
-            <a class="btn btn-success my-5" href="{{ route('dccomics.create') }}" style="height: 50px">Aggiungi un fumetto alla pagina</a>
         </div>
+        <a class="btn btn-success my-5" href="{{ route('dccomics.create') }}" style="height: 50px">Aggiungi un fumetto alla pagina</a>
+        @include('partials.delete')
     </div>
 
-    @include('partials.delete')
+   
 
     
     {{--     <a class="btn btn-warning my-5" href="{{ route('welcome') }}">Ritorna in home page</a> --}}

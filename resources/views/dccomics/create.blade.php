@@ -8,12 +8,12 @@
             @csrf
             <div class="mb-3">
                 <label for="taste" class="form-label">Titolo</label>
-                <input type="text" class="form-control" id="taste" name="taste">
+                <input type="text" class="form-control" id="title" name="title">
             </div>
 
             <div class="mb-3">
                 <label for="taste" class="form-label">Descrizione</label>
-                <input type="text" class="form-control" id="taste" name="taste">
+                <input type="text" class="form-control" id="description" name="description">
             </div>
         
             <div class="mb-3">

@@ -39,6 +39,7 @@ class DccomicsController extends Controller
     public function store(Request $request)
     {
         $data=$request->all();
+        /* dd($data); */
         $dccomic=new Dccomic();
         $dccomic->fill($data);
         $dccomic->save();
